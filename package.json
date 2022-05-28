@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/TryHarder3l33t/spaceinvaders/issues"
   },
-  "homepage": "https://github.com/TryHarder3l33t/spaceinvaders#readme"
+  "homepage": "https://github.com/TryHarder3l33t/spaceinvaders#readme",
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  }
 }
