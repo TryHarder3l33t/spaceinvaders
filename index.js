@@ -33,7 +33,6 @@ function game() {
     player.draw(ctx);
     playerBulletController.draw(ctx);
     enemyBulletController.draw(ctx);
-    console.log(isGameOver);
   }
 }
 
