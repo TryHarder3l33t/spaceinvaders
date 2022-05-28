@@ -14,13 +14,22 @@ export default class BulletController {
     this.shootSound.volume = 0.08;
   }
   draw(ctx) {
-    console.log(this.bullets.length);
     this.bullets = this.bullets.filter(
       (bullet) => bullet.y + bullet.width > 0 && bullet.y <= this.canvas.height
     );
     this.bullets.forEach((bullet) => bullet.draw(ctx));
     if (this.timeUntilNextBulletAllowed > 0) {
       this.timeUntilNextBulletAllowed--;
+    }
+  }
+
+  collideWith(sprite) {
+    const bulletThatHitSpriteIndex = this.bullets.findIndex((bullet) =>
+      bullet.collideWith(sprite)
+    );
+    if (bulletThatHitSpriteIndex >= 0) {
+      this.bullets.splice(bulletThatHitSpriteIndex, 1);
+      return true;
     }
   }
 
