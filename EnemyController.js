@@ -34,6 +34,15 @@ export default class Enemycontroller {
     this.drawEnemies(ctx);
     this.resetMoveDownTimer();
     console.log(this.moveDownTimer);
+    this.fireBullet();
+  }
+
+  fireBullet() {
+    this.firebulletTimer--;
+    if (this.fireBulletTimer <= 0) {
+      this.fireBulletTimer = this.fireBulletTimerDefault;
+      const allEmemies = this.enemyRows.flat();
+    }
   }
 
   resetMoveDownTimer() {
