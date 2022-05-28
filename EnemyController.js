@@ -15,13 +15,17 @@ export default class Enemycontroller {
   currentDirection = MovingDirection.right;
   xVelocity = 0;
   yVelocity = 0;
-  defaultXVelocity = 1;
+  defaultXVelocity = 0; //change back to 1 for the real play
   defaultYVelocity = 1;
   moveDownTimerDefault = 30;
   moveDownTimer = this.moveDownTimerDefault;
+  fireBulletTimerDefault = 100;
+  fireBulletTimer = this.fireBulletTimerDefault;
 
-  constructor(canvas) {
+  constructor(canvas, enemyBulletController) {
     this.canvas = canvas;
+    this.enemyBulletController = enemyBulletController;
+
     this.createEnemies();
   }
   draw(ctx) {
